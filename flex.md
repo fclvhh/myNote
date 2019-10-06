@@ -123,3 +123,7 @@
 
 ![img](C:\Users\lenovo\Desktop\assets\19fb0f3a31fa497191b8.png)
 
+2. 让html结构在后面的先展示–-圣杯布局
+
+   ​	flex的 子容器的 一个  order属性解决
+
