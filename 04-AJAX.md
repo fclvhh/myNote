@@ -126,7 +126,7 @@ myButton.addEventListener('click', (e)=>{
   let xhr = new XMLHttpRequest()
   	// 创建一个请求 open()-->创建了一个pst请求,请求路径为/xxx
  	 xhr.open('get', '/xxx') 
-    // 如果想要使用post提交数据,必须添加此行 设置响应头
+    // 如果想要使用post提交数据,必须添加此行 设置请求头
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     // 请求的第四部分,带上post请求参数
  	 xhr.send('name=fox&age=18')
@@ -172,6 +172,38 @@ jQuery的ajax早就没人用咯! 哈哈!!!!
 
 现在都是用axios和vue代替了jQuery!!!
 
+# 如何手写ajax?(面试常考)
+
+我总结为四步骤:
+
+1. 创建xhr对象 (异步对象)
+2. 创建请求   
+   1. post 请求 需要设置请求 ,所以需要第三步
+   2. get请求  不需要设置请求 , 可以跳过第三步
+3. 设置请求
+   1. 设置请求头
+   2. 设置请求参数
+4. 绑定 onReadyStateChange 这个事件
+   1. readyState   判断请求与响应的整个流程是否成功了   4
+   2. stiatus 表示状态码    判断请求是否成功   200-300
+   3. 获取 responseText
+   4. 把responseText JSON格式的字符串解析成 js对象     JSON.parse
+
+```javascript
+var xhr = new XMLHttpRequst()
+xhr.open('post','url')
+xhr.setRequstHeader('content-type','application/...')
+xhr.send('name=sun&age=18')
+xhr.onreadyStateChange = function(){
+    if(xhr.readyState === 4){
+        if(xhr.status>=200&&xhr.status<=300){
+           var string = xhr.responseText
+           var object = window.JSON.parse(string)
+        }
+    }
+}
+```
+
 
 
 # AJAX的同源策略
@@ -206,6 +238,8 @@ res.setHeader('Access-Control-Allow-Origin','地址')
 ```
 
 后端在写处理逻辑的时候,加上这句话,相当于为"地址"所i在的地方提供了通行证,从而可以实现跨域访问了
+
+当然,这是后端在写逻辑的时候指定   我们控制不了哦!
 
 
 
