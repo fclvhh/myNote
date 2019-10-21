@@ -9,8 +9,8 @@ element.addEventListener('click', function () {
 - `addEventListener()`来绑定事件
 - 第一个参数  :   ''事件名"
 - 第二个参数  :  ''事件响应函数''
-- 第三个参数  :  表示从哪里开始触发,默认是false
-  - 表示冒泡阶段执行
+- 第三个参数  :  "事件执行时机"     默认是false
+  - false表示冒泡阶段执行
   - true表示捕获阶段执行
 
 
@@ -67,7 +67,7 @@ element.addEventListener('click', function () {
 
 在div.wrap 层(button的上一层),阻止冒泡,这样document的fn2就不会执行
 
-我们点击wrap意外的区域时,自然会触发fn2, 隐藏掉样式
+我们点击wrap以外的区域时,自然会触发fn2, 隐藏掉样式
 
 **问题:**
 
