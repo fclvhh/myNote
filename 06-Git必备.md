@@ -71,7 +71,77 @@
 
 # Git进阶
 
-[git完整文档](https://git-scm.com/)
+[Git完整代码](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
 
-## 
+
+
+## 常识
+
+- .git 目录
+  - 存储版本信息 , 管理控制的
+
+
+
+# 文件状态的演变
+
+.git 就是一个观察者
+
+1. 拷贝文件夹里面的内容到 .git 里面
+2. 观察 文件夹的变化 ，同步到 .git的拷贝中去
+3. 每次变化都有单独的拷贝
+
+
+
+## 文件的状态生命周期
+
+- ![](assets\git4.jpg)
+  - Untracked 「 未追踪 」
+  - Staged   「暂存」
+    - `git  commit`
+    - 拷贝到 .git 中
+  - Unmodifiled 「未修改」
+    - 拷贝的默认状态 就是未修改
+    - 一旦监听到修改 , 就同步修改
+  - modifiled 「已修改」
+    - 记录修改的变化
+    - 方便版本回退
+
+
+
+- 核心理解
+  - 真正的核心就是 上图中的 天蓝色 阴影部分, 这里面放着最终的版本 
+    - `git commit` 这条命令就是让文件变成 Unmodifiled 状态
+  - modifiled 和 Staged  状态的区别与联系
+    - 两者都是和文件的改动有关
+    - Staged  会暂存文件目录里面文件的变化
+    - modifiled 会保存文件的最终变化 , 方便版本回退
+    - `git add`  这条命令是记录变化的核心
+- `git commit -am`
+
+```powershell
+git add .
+git commit -m "提交文件的修改"  
+```
+
+- 上述是等价的
+
+
+
+- **git add 与 git commit -a 有什么区别**
+  - 对于新增文件 , 必须先 add  , 不可以一步到位
+
+
+
+
+
+## 小结
+
+以下两个命令能满足绝大多数使用场景：
+
+```
+git add .
+git commit -am "bug fix"
+```
+
+ 
 
