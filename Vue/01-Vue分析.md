@@ -120,4 +120,84 @@
 - 简单例子
   - 订阅报纸
   - 报社有新报纸发行了 , 会送一份给你
-- 
+- [观察者模式的简单实现](http://js.jirengu.com/zusuj/1)
+
+
+
+## 什么是数据劫持?
+
+- ES6 语法对象的get/set 语法
+  - 对象属性的读
+    - 相当于调用属性的get()
+  - 对象属性的修改
+    - 相当于调用属性set()
+
+```javascript
+var a = 10
+var obj = {
+    _a : 10, 
+    get a(){return age},
+    ste a(value){
+        if(value<100){
+            a = value
+        }else{
+            a = 100
+        }
+    }
+}
+obj.a
+结果是 10
+obj.a = 1000
+结果是 100
+```
+
+- 我们可以通过者两个方法
+  - 对属性的修改进行限制  「如上例」
+  - 也可以对属性的修改进行监听  
+    - 在内联随便写点代码就可以实现了
+
+- Object.defineProperty()方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象
+  - es6中 , 「对象属性的访问 ,相当于调用 get()」, 「对象属性的修改,相当于调用set()」
+  - 就是利用这个特性实现监听的
+  - [参考资料](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
+  - 目前,不用去关注细节 , 只要知大概作用
+    - 给对象添加属性的api
+    - 并且属性都是setter/getter 设置的
+- 数据劫持
+  - 我们通过Object.defineproperty( ) 可以清楚的知道  
+  - 对象的属性发生了什么样的修改
+    - 至此就可以了 , 深究是以后深入源码再考虑不迟
+
+
+
+## Vue如何实现双向绑定的?
+
+- Vue 数据双向绑定主要是指：数据变化更新视图，视图变化更新数据
+  - 其中，View 变化更新 Data ，可以通过事件监听的方式来实现
+  - 所以 Vue 的数据双向绑定的工作主要是如何根据 Data 变化更新 View。
+
+- 原理图
+  - ![](assets\双向绑定2.jpg)
+
+- 解释:
+
+  - Oberver是一个 Object.defineProperty()负责添加属性的对象 , 这些属性是符合观察者模式的  
+  - Obever通过publishMsg(Dep,…..) 来广播 数据的变化
+  - Dep的实现和Oberver类似
+  - Dep 通过publishMsg(watcher,…..) 来广播数据变化
+  - Watcher 是 Dep的订阅对象
+  - 缓口气
+    - Watcher 最终订阅到了 对象属性的变化
+    - 我们就可以操作DOM , 获取视图上的数据, 放到data属性的value中去就好
+  - 接下来实现  
+    - Wather 触发  「解析器 Compile 」中对应的更新函数
+    - 把View进行更新
+
+  
+
+## 深入学习资料
+
+- [Vue双向绑定 掘金](https://juejin.im/post/5d421bcf6fb9a06af23853f1#heading-13)
+- [剖析Vue原理 思否](https://segmentfault.com/a/1190000006599500)
+- [观察设计者模式](https://juejin.im/post/5a14e9edf265da4312808d86)
+
