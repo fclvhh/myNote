@@ -45,8 +45,6 @@
 
 > 是不是用户发出的指令 , 必须要由 View模块接收呢?
 
-
-
 - 通过 View 接受指令，传递给 Controller。
   - ![](assets\MVC-3.jpg)
 
@@ -177,8 +175,9 @@ obj.a = 1000
   - 所以 Vue 的数据双向绑定的工作主要是如何根据 Data 变化更新 View。
 
 - 原理图
-  - ![](assets\双向绑定2.jpg)
-
+  
+- ![](assets\双向绑定2.jpg)
+  
 - 解释:
 
   - Oberver是一个 Object.defineProperty()负责添加属性的对象 , 这些属性是符合观察者模式的  

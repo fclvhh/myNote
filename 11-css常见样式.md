@@ -209,15 +209,18 @@ body {
   - 不设置，默认溢出会展示
   - `text-overflow:clip;`溢出隐藏切断
   - `text-overflow:ellipsis;`溢出最后展示   「... 」的符号
-
 - overflow
   - 应用到块级元素上，设置如何处理内容太大的场景
   - overflow:visible;默认值。内容不修剪，呈现在元素框之外
   - overflow:hidden;内容被修剪，不出现滚动条
   - overflow:scroll;出现滚动条
   - overflow:auto;不超出时无滚动条，超出出现滚动条
-
 - 注意
   - overflow可以单独设置水平和垂直方向，如overflow-x:scroll;overflow-y:hidden;
   - 使overflow有效果，块级容器必须有一个指定的高度（height或者max-height）或者将white-space设置为nowrap「水平方向上不可以换行,就需要手机使用overflaot」
 - [示例:单行文本溢出](http://js.jirengu.com/pugoc/1)
+
+
+
+
+

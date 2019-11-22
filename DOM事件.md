@@ -33,7 +33,7 @@ element.addEventListener('click', function () {
 
 ## DOM事件触发的完整流程
 
-![](C:\Users\lenovo\Desktop\前端博客MarkDown\assets\事件冒泡.png)
+![](assets\事件冒泡.png)
 
 
 
