@@ -1,3 +1,7 @@
+[参考资料](https://juejin.im/post/58e3a5a0a0bb9f0069fc16bb#heading-0)
+
+
+
 # 概览
 
 ![](C:\Users\lenovo\Desktop\assets\flex布局.png)
@@ -59,7 +63,21 @@
 
 ### 选择对齐方式
 
-如果基准是主轴
+设置子容器按照「**主轴排列**」
+
+①内容对齐方式
+
+- 两端对齐
+  - 确定两端
+  - 每行均匀分布
+    - 两端是否留空
+    - between
+    - around
+  - 摆放顺序
+- 居中对齐
+  - 确定行center
+  - 确定内容center
+  - 行center和内容center的对齐
 
 ![](C:\Users\lenovo\Desktop\assets\flex-3.png)
 
@@ -67,7 +85,7 @@
 
 
 
-如果基准是交叉轴
+设置子容器按照「**交叉轴排列**」
 
 ![](C:\Users\lenovo\Desktop\assets\flex-4.png)
 
