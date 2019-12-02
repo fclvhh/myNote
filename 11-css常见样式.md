@@ -57,7 +57,7 @@
 
 
 
-## 文本字体font-family 「包含字体图标比较重要」
+## 🎈文本字体font-family 「包含字体图标比较重要」
 
 - 设置字体
   - font-family:'微软雅黑','MicrosoftYaHei','SourceHanSans',Helvetica,Arial,sans-serif;
@@ -75,14 +75,14 @@ font-family:"BitstreamVeraSerifBold";
 src:url("https://mdn.mozillademos.org/files/2468/VeraSeBd.ttf");
 }
 body {
-    ffont-family:"BitstreamVeraSerifBold",serif
+    font-family:"BitstreamVeraSerifBold",serif;
 }
 ```
 
 
 
-- 字体图标
-  - 文字是被画出来的
+- **字体图标**
+  - 文字是被「画」出来的
   - 「原理」
     - 写代码 的时候 , 用unicode写 如 1102这样的编码
     - 浏览器解析的根据url去找对应的.ttf文件
@@ -92,7 +92,7 @@ body {
     - [unicode使用](https://www.iconfont.cn/help/detail?spm=a313x.7781069.1998910419.d8cf4382a&helptype=code)
     - [unicode案例](http://js.jirengu.com/duwac/1)
     - unicode的优化
-      - 文本时unicode  导致可读性不强
+      - 文本是unicode  导致可读性不强
       - font-class 方案,提高可读性!
       - [font-class使用](http://js.jirengu.com/jekox/1)
   - 优缺点
