@@ -182,3 +182,37 @@ Promise有原装的成功和失败回调,  只要用Promise包裹axios异步操�
 
 # axios拦截器的使用
 
+作用;每次在发送请求获得响应后,进行对应的处理
+
+
+
+使用:
+
+四种情况
+
+- 请求成功
+- 请求失败
+- 响应成功
+- 响应失败
+
+分别可以对者四种情况进行拦截
+
+
+
+格式
+
+```javascript
+axios.intercepters.request.use( config =>{return config},err =>{return err})
+```
+
+
+
+理解:
+
+axios的拦截器在把ajax请求发送成功后,去服务器之前,  拦截住, 获取请求的参数config对象,
+
+对请求的功能进行增强 , 之后返回config对象, 放行 ajax请求
+
+类推; axios拦截器 会在服务器的响应回来后,拦截住,对响应的信息进行增强, 然后传给 别人
+
+处理信息
