@@ -172,22 +172,18 @@ jQuery的ajax早就没人用咯! 哈哈!!!!
 
 现在都是用axios和vue代替了jQuery!!!
 
-# 如何手写ajax?(面试常考)
+# 🎈如何手写ajax?(面试常考)
 
-我总结为四步骤:
+## 四步骤:
 
 1. 创建xhr对象 (异步对象)
-2. 创建请求   
-   1. post 请求 需要设置请求 ,所以需要第三步
-   2. get请求  不需要设置请求 , 可以跳过第三步
-3. 设置请求
-   1. 设置请求头
-   2. 设置请求参数
-4. 绑定 onReadyStateChange 这个事件
+2. 创建url
+4. 监听 onReadyStateChange 这个事件
    1. readyState   判断请求与响应的整个流程是否成功了   4
-   2. stiatus 表示状态码    判断请求是否成功   200-300
+   2. status 表示状态码    判断请求是否成功   200-300
    3. 获取 responseText
    4. 把responseText JSON格式的字符串解析成 js对象     JSON.parse
+4. 发送请求
 
 ```javascript
 var xhr = new XMLHttpRequst()
@@ -203,6 +199,26 @@ xhr.onreadyStateChange = function(){
     }
 }
 ```
+
+## 一个请求的一生
+
+> 关于readystateChange事件的解析
+
+| requset 请求阶段                | readystate |
+| ------------------------------- | ---------- |
+| new xhr                         | 0          |
+| xhr.open                        | 1          |
+| xhr.send                        | 2          |
+| loding   = >得到响应 , 开始下载 | 3          |
+| done   =>响应下载完毕           |            |
+
+
+
+根据readystate 可以判断请求是否成功 , 得到了响应 ,
+
+但是不能确切的知道响应的内容是否正确 , 所以要获取响应的状态码 status
+
+xhr.status
 
 
 

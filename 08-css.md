@@ -7,7 +7,7 @@
             p {
                 font-size:20px;
             }
-            @mediaprint {
+            @media print {
                 font-size:60px;
             }
         </style>

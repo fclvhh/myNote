@@ -75,10 +75,115 @@
 
 
 
-## 常识
+## Git目分析
 
+![](https://user-gold-cdn.xitu.io/2018/4/25/162fcc0987bf1c0a?imageslim)
+
+文件目录分析：
+
+- 父目录 --workspace
 - .git 目录
-  - 存储版本信息 , 管理控制的
+  - index 暂存库
+  - 本地仓库 Repository   
+    - 放master 分支
+    - commit命令可以将暂存区中的文件添加到本地仓库中
+- 远程仓库  --git代码服务器   github
+
+
+
+
+
+## Git工作流程细节分析
+
+![](https://user-gold-cdn.xitu.io/2018/4/25/162fcc0e7e711dc7?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
+
+> 日常开发时代码实际上放置在工作区中
+>
+> 通过add等这些命令将代码文教提交给暂存区（Index/Stage），也就意味着代码全权交给了git进行管理
+>
+> 通过commit等命令将暂存区提交给master分支上，也就是意味打了一个版本，也可以说代码提交到了本地仓库中
+>
+> 团队协作过程中自然而然还涉及到与远程仓库的交互
+
+**git命令可以分为这样的逻辑进行理解和记忆**：
+
+1. git管理配置的命令；
+
+   **几个核心存储区的交互命令：**
+
+2. 工作区与暂存区的交互；
+
+3. 暂存区与本地仓库（分支）上的交互；
+
+4. 本地仓库与远程仓库的交互
+
+
+
+
+
+
+
+# git常用命令
+
+## git配置命令
+
+> 查询配置信息
+
+列出当前配置
+
+```shell
+git config --list
+```
+
+列出repository配置
+
+```shell
+git config --local --list
+```
+
+列出全局配置
+
+```shell
+git config --global --list
+```
+
+列出系统配置
+
+```shell
+git config --system --list
+```
+
+
+
+
+
+---
+
+
+
+> 第一次使用git，配置用户信息
+
+配置用户名
+
+```shell
+git config --global user.name "your name"
+```
+
+配置用户邮箱
+
+```shell
+git config --global user.email "youremail@github.com"
+```
+
+
+
+> 其他配置
+
+配置解决冲突时使用哪种差异分析工具，比如要使用vimdiff：`git config --global merge.tool vimdiff`;
+
+配置git命令输出为彩色的：`git config --global color.ui auto`;
+
+配置git使用的文本编辑器：`git config --global core.editor vi`;
 
 
 
