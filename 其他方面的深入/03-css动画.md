@@ -75,5 +75,5 @@ js实现动效果方案：
 | transition | 过渡 , 做过渡效果的                    |
 | transform  | 该外观或位置  –-转换                   |
 | translate  | 作为transform的一个属性 , 可以制定位移 |
-| animathon  | 动画  , 可指定动画帧                   |
+| animation  | 动画  , 可指定动画帧                   |
 
