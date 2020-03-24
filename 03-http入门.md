@@ -61,7 +61,7 @@ URI分为
 
 一般用URL作为网址!
 
-![](C:\Users\lenovo\Desktop\前端博客MarkDown\assets\http-1.png)
+![](assets\http-1.png)
 
 
 
@@ -73,9 +73,9 @@ URI分为
 - client  客户端
 - HTTP
 
-![](C:\Users\lenovo\Desktop\前端博客MarkDown\assets\http-2.png)
+![](assets\http-2.png)
 
-![](C:\Users\lenovo\Desktop\前端博客MarkDown\assets\http-3.png)
+![](assets\http-3.png)
 
 
 
