@@ -4,7 +4,7 @@
 
 # 概览
 
-![](C:\Users\lenovo\Desktop\assets\flex布局.png)
+![](assets\flex布局.png)
 
 - 什么是flex?
 
@@ -57,7 +57,7 @@
 
 ### 选择一个基准进行排列
 
-![](C:\Users\lenovo\Desktop\assets\flex-2.png)
+![](assets\flex-2.png)
 
 
 
